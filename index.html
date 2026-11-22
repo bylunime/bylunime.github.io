@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A personal collection of travel photographs and notes.">
+  <title>bylunime — Photographs &amp; Notes</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#about" data-i18n="skip">Skip to content</a>
+  <header class="hero" id="home">
+    <img class="hero-photo" src="assets/web/hero.jpg" alt="Mountain peaks and the stone terraces of Machu Picchu in Peru" fetchpriority="high">
+    <div class="hero-shade"></div>
+    <div class="language-switch" role="group" aria-label="Language">
+      <button id="language-toggle" aria-expanded="false" aria-controls="language-menu" aria-label="Language: English">
+        <span id="current-language">EN</span>
+        <svg width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="m1 1 4 4 4-4" stroke="currentColor" stroke-width="1.2"/></svg>
+      </button>
+      <div id="language-menu" hidden>
+        <button data-lang="en" lang="en" aria-pressed="true"><span>English</span><span class="language-code" aria-hidden="true">EN</span></button>
+        <button data-lang="es" lang="es" aria-pressed="false"><span>Español</span><span class="language-code" aria-hidden="true">ES</span></button>
+        <button data-lang="pt" lang="pt-BR" aria-pressed="false"><span>Português</span><span class="language-code" aria-hidden="true">PT</span></button>
+      </div>
+    </div>
+    <div class="hero-title">
+      <p class="eyebrow" data-i18n="photographs">Photographs &amp; notes</p>
+      <h1>bylunime</h1>
+      <nav aria-label="Main navigation">
+        <a href="#about" data-i18n="about">About</a><div class="journeys-menu"><button id="journeys-toggle" aria-expanded="false" aria-controls="country-menu" data-i18n="journeys">Journeys</button><div id="country-menu" hidden></div></div><a href="#gallery" data-i18n="gallery">Gallery</a>
+      </nav>
+    </div>
+    <div class="hero-bottom"><span data-i18n="heroLocation">Peru · South America</span><a href="#gallery" data-i18n="explorePhotos">Explore the photographs</a></div>
+  </header>
+  <main>
+    <section class="about section" id="about" aria-labelledby="about-title">
+      <figure class="about-photo"><img src="assets/web/photo-5.jpg" alt="A traveler overlooking a city and the surrounding mountains in Peru" loading="lazy"></figure>
+      <div class="about-copy">
+        <p class="eyebrow" data-i18n="about">About</p>
+        <h2 id="about-title" data-i18n-html="aboutTitle">A personal<br><em>collection.</em></h2>
+        <p data-i18n-html="aboutCopy">Travel photographs and notes,<br>collected in one place.</p>
+        <p class="muted" data-i18n="introSoon">Introduction coming soon.</p>
+        <a class="text-link" href="#journal" data-i18n="exploreJourneys">Explore the journeys</a>
+      </div>
+    </section>
+    <section class="journal section" id="journal" aria-labelledby="journal-title">
+      <div class="section-heading"><div><p class="eyebrow" data-i18n="theJourneys">The journeys</p><h2 id="journal-title" data-i18n-html="journeysTitle">Selected <em>journeys</em></h2></div><p data-i18n="fromArchive">From the photo archive</p></div>
+      <div class="journey-grid" id="journey-grid"></div>
+    </section>
+    <section class="us-journeys section" id="united-states" aria-labelledby="us-title" hidden>
+      <nav class="destination-breadcrumb" aria-label="Breadcrumb"><a href="#journal" data-i18n="journeys">Journeys</a><span aria-hidden="true">/</span><span data-i18n="usa">United States</span></nav>
+      <div class="section-heading"><div><p class="eyebrow" data-i18n="northAmerica">North America</p><h2 id="us-title" tabindex="-1" data-i18n="usa">United States</h2></div><p data-i18n="citiesIntro">Five cities, five photo collections.</p></div>
+      <div class="us-city-grid" id="us-city-grid"></div>
+      <button class="text-link" id="all-us-photos" data-i18n="allUSPhotos">View all United States photographs</button>
+    </section>
+    <section class="gallery section" id="gallery" aria-labelledby="gallery-title">
+      <div class="section-heading"><div><p class="eyebrow" data-i18n="photoArchive">The photo archive</p><h2 id="gallery-title" data-i18n-html="galleryTitle">A closer <em>look</em></h2></div><p data-i18n="galleryHint">Select a photograph to view it full size.</p></div>
+      <div class="country-filters" id="country-filters" role="group" aria-label="Filter photographs by country"></div>
+      <div class="city-filter-bar" id="city-filter-bar" hidden><span class="eyebrow" data-i18n="cities">Cities</span><div class="country-filters" id="city-filters" role="group" aria-label="Filter photographs by city"></div></div>
+      <div class="photo-grid" id="photo-grid"></div>
+      <p class="gallery-end" id="gallery-count"></p>
+    </section>
+  </main>
+  <footer><a class="wordmark" href="#home">bylunime</a><p data-i18n="photographs">Photographs &amp; notes</p><a href="#home" data-i18n="backTop">Back to top</a></footer>
+  <dialog id="journal-dialog" class="journal-dialog" aria-labelledby="journal-dialog-title">
+    <button class="close" aria-label="Close journal" data-close><span data-i18n="close">Close</span> <span aria-hidden="true">×</span></button>
+    <img class="journal-cover" src="assets/web/photo-3.jpg" alt="Mountain valley in Peru">
+    <article class="journal-body"><button class="text-link journal-back" id="journal-back" data-i18n="backCities" hidden>Back to United States cities</button><p class="eyebrow" id="journal-region">South America</p><h2 id="journal-dialog-title">Peru</h2><p class="muted" data-i18n="notesSoon">Travel notes coming soon.</p><p data-i18n="notesPlaceholder">This collection begins with photographs. Written notes will be added here.</p><button class="text-link" id="journal-gallery" data-i18n="viewPhotos">View the photographs</button></article>
+  </dialog>
+  <dialog id="lightbox" class="lightbox" aria-labelledby="photo-caption">
+    <div class="lightbox-top"><span id="photo-count"></span><button class="close" aria-label="Close photograph" data-close><span data-i18n="close">Close</span> <span aria-hidden="true">×</span></button></div>
+    <figure><img id="large-photo" alt=""><figcaption id="photo-caption"></figcaption></figure>
+    <div class="lightbox-controls"><button id="previous-photo" data-i18n="previous">Previous</button><span id="lightbox-country">Peru</span><button id="next-photo" data-i18n="next">Next</button></div>
+  </dialog>
+</body>
+</html>
