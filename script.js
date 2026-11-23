@@ -1,19 +1,19 @@
 const translations = {
   en: {
     title:'Photographs & Notes', skip:'Skip to content', photographs:'Photographs & notes', about:'About', journeys:'Journeys', gallery:'Gallery', heroLocation:'Peru · South America', explorePhotos:'Explore the photographs',
-    aboutTitle:'A personal<br><em>collection.</em>', aboutCopy:'Travel photographs and notes,<br>collected in one place.', introSoon:'Introduction coming soon.', exploreJourneys:'Explore the journeys', theJourneys:'The journeys', journeysTitle:'Selected <em>journeys</em>', fromArchive:'From the photo archive', photoArchive:'The photo archive', galleryTitle:'A closer <em>look</em>', galleryHint:'Select a photograph to view it full size.', backTop:'Back to top', close:'Close', notesSoon:'Travel notes coming soon.', notesPlaceholder:'This collection begins with photographs. Written notes will be added here.', viewPhotos:'View the photographs', previous:'Previous', next:'Next', all:'All countries', openJournal:'Open journal', photoCollection:'A collection of photographs', viewPhoto:'View photograph', enlarge:'Enlarge photograph', count:(n)=>`${n} ${n===1?'photograph':'photographs'}`, countriesCount:(n)=>`${n} countries`, language:'Language', mainNav:'Main navigation', filter:'Filter photographs by country', closeJournal:'Close journal', closePhoto:'Close photograph', southAmerica:'South America', northAmerica:'North America', asia:'Asia',
+    aboutTitle:'A personal<br><em>collection.</em>', aboutCopy:'Travel photographs and notes,<br>collected in one place.', introSoon:'Introduction coming soon.', exploreJourneys:'Explore the journeys', theJourneys:'The journeys', journeysTitle:'Selected <em>journeys</em>', fromArchive:'From the photo archive', photoArchive:'The photo archive', galleryTitle:'A closer <em>look</em>', galleryHint:'Select a photograph to view it full size.', backTop:'Back to top', close:'Close', notesSoon:'Travel notes coming soon.', notesPlaceholder:'This collection begins with photographs. Written notes will be added here.', viewPhotos:'View the photographs', previous:'Previous', next:'Next', all:'All countries', openJournal:'Open journal', photoCollection:'A collection of photographs', viewPhoto:'View photograph', enlarge:'Enlarge photograph', count:(n)=>`${n} ${n===1?'photograph':'photographs'}`, countriesCount:(n)=>`${n} ${n===1?'country':'countries'}`, language:'Language', mainNav:'Main navigation', filter:'Filter photographs by country', closeJournal:'Close journal', closePhoto:'Close photograph', southAmerica:'South America', northAmerica:'North America', asia:'Asia',
     peru:'Peru', bolivia:'Bolivia', argentina:'Argentina', brazil:'Brazil', usa:'United States', vietnam:'Vietnam',
     machu:'Machu Picchu beneath a cloudy sky', valley:'Rocky mountains above a town in Peru', city:'A traveler overlooking a city in Peru', ruins:'A town and stone ruins below the mountains', stars:'A star-filled sky reflected on the salt flats', sunset:'Sunset reflected on the salt flats', falls:'Waterfalls surrounded by green forest', coast:'A coastal mountain seen from a cable car', nyc:'Bright billboards above a rainy city street', street:'A street vendor and motorbikes in Vietnam'
   },
   es: {
     title:'Fotografías y notas', skip:'Saltar al contenido', photographs:'Fotografías y notas', about:'Acerca de', journeys:'Viajes', gallery:'Galería', heroLocation:'Perú · Sudamérica', explorePhotos:'Explorar las fotografías',
-    aboutTitle:'Una colección<br><em>personal.</em>', aboutCopy:'Fotografías y notas de viaje,<br>reunidas en un solo lugar.', introSoon:'Pronto, una presentación.', exploreJourneys:'Explorar los viajes', theJourneys:'Los viajes', journeysTitle:'Viajes <em>seleccionados</em>', fromArchive:'Del archivo fotográfico', photoArchive:'El archivo fotográfico', galleryTitle:'Una mirada más <em>cercana</em>', galleryHint:'Selecciona una fotografía para ampliarla.', backTop:'Volver arriba', close:'Cerrar', notesSoon:'Las notas de viaje estarán disponibles pronto.', notesPlaceholder:'Esta colección empieza con fotografías. Aquí se añadirán las notas de viaje.', viewPhotos:'Ver las fotografías', previous:'Anterior', next:'Siguiente', all:'Todos los países', openJournal:'Abrir diario', photoCollection:'Una colección de fotografías', viewPhoto:'Ver fotografía', enlarge:'Ampliar fotografía', count:(n)=>`${n} ${n===1?'fotografía':'fotografías'}`, countriesCount:(n)=>`${n} países`, language:'Idioma', mainNav:'Navegación principal', filter:'Filtrar fotografías por país', closeJournal:'Cerrar diario', closePhoto:'Cerrar fotografía', southAmerica:'Sudamérica', northAmerica:'Norteamérica', asia:'Asia',
+    aboutTitle:'Una colección<br><em>personal.</em>', aboutCopy:'Fotografías y notas de viaje,<br>reunidas en un solo lugar.', introSoon:'Pronto, una presentación.', exploreJourneys:'Explorar los viajes', theJourneys:'Los viajes', journeysTitle:'Viajes <em>seleccionados</em>', fromArchive:'Del archivo fotográfico', photoArchive:'El archivo fotográfico', galleryTitle:'Una mirada más <em>cercana</em>', galleryHint:'Selecciona una fotografía para ampliarla.', backTop:'Volver arriba', close:'Cerrar', notesSoon:'Las notas de viaje estarán disponibles pronto.', notesPlaceholder:'Esta colección empieza con fotografías. Aquí se añadirán las notas de viaje.', viewPhotos:'Ver las fotografías', previous:'Anterior', next:'Siguiente', all:'Todos los países', openJournal:'Abrir diario', photoCollection:'Una colección de fotografías', viewPhoto:'Ver fotografía', enlarge:'Ampliar fotografía', count:(n)=>`${n} ${n===1?'fotografía':'fotografías'}`, countriesCount:(n)=>`${n} ${n===1?'país':'países'}`, language:'Idioma', mainNav:'Navegación principal', filter:'Filtrar fotografías por país', closeJournal:'Cerrar diario', closePhoto:'Cerrar fotografía', southAmerica:'Sudamérica', northAmerica:'Norteamérica', asia:'Asia',
     peru:'Perú', bolivia:'Bolivia', argentina:'Argentina', brazil:'Brasil', usa:'Estados Unidos', vietnam:'Vietnam',
     machu:'Machu Picchu bajo un cielo nublado', valley:'Montañas rocosas sobre un pueblo de Perú', city:'Una viajera contempla una ciudad de Perú', ruins:'Un pueblo y ruinas de piedra al pie de las montañas', stars:'Un cielo estrellado reflejado en el salar', sunset:'El atardecer reflejado en el salar', falls:'Cascadas rodeadas de un bosque verde', coast:'Una montaña costera vista desde un teleférico', nyc:'Carteles luminosos sobre una calle lluviosa', street:'Una vendedora y motocicletas en una calle de Vietnam'
   },
   pt: {
     title:'Fotografias e anotações', skip:'Ir para o conteúdo', photographs:'Fotografias e anotações', about:'Sobre', journeys:'Viagens', gallery:'Galeria', heroLocation:'Peru · América do Sul', explorePhotos:'Explorar as fotografias',
-    aboutTitle:'Uma coleção<br><em>pessoal.</em>', aboutCopy:'Fotografias e anotações de viagem,<br>reunidas em um só lugar.', introSoon:'Apresentação em breve.', exploreJourneys:'Explorar as viagens', theJourneys:'As viagens', journeysTitle:'Viagens <em>selecionadas</em>', fromArchive:'Do arquivo fotográfico', photoArchive:'O arquivo fotográfico', galleryTitle:'Um olhar mais <em>próximo</em>', galleryHint:'Selecione uma fotografia para ampliá-la.', backTop:'Voltar ao topo', close:'Fechar', notesSoon:'Relatos de viagem em breve.', notesPlaceholder:'Esta coleção começa com fotografias. As anotações de viagem serão adicionadas aqui.', viewPhotos:'Ver as fotografias', previous:'Anterior', next:'Próxima', all:'Todos os países', openJournal:'Abrir diário', photoCollection:'Uma coleção de fotografias', viewPhoto:'Ver fotografia', enlarge:'Ampliar fotografia', count:(n)=>`${n} ${n===1?'fotografia':'fotografias'}`, countriesCount:(n)=>`${n} países`, language:'Idioma', mainNav:'Navegação principal', filter:'Filtrar fotografias por país', closeJournal:'Fechar diário', closePhoto:'Fechar fotografia', southAmerica:'América do Sul', northAmerica:'América do Norte', asia:'Ásia',
+    aboutTitle:'Uma coleção<br><em>pessoal.</em>', aboutCopy:'Fotografias e anotações de viagem,<br>reunidas em um só lugar.', introSoon:'Apresentação em breve.', exploreJourneys:'Explorar as viagens', theJourneys:'As viagens', journeysTitle:'Viagens <em>selecionadas</em>', fromArchive:'Do arquivo fotográfico', photoArchive:'O arquivo fotográfico', galleryTitle:'Um olhar mais <em>próximo</em>', galleryHint:'Selecione uma fotografia para ampliá-la.', backTop:'Voltar ao topo', close:'Fechar', notesSoon:'Relatos de viagem em breve.', notesPlaceholder:'Esta coleção começa com fotografias. As anotações de viagem serão adicionadas aqui.', viewPhotos:'Ver as fotografias', previous:'Anterior', next:'Próxima', all:'Todos os países', openJournal:'Abrir diário', photoCollection:'Uma coleção de fotografias', viewPhoto:'Ver fotografia', enlarge:'Ampliar fotografia', count:(n)=>`${n} ${n===1?'fotografia':'fotografias'}`, countriesCount:(n)=>`${n} ${n===1?'país':'países'}`, language:'Idioma', mainNav:'Navegação principal', filter:'Filtrar fotografias por país', closeJournal:'Fechar diário', closePhoto:'Fechar fotografia', southAmerica:'América do Sul', northAmerica:'América do Norte', asia:'Ásia',
     peru:'Peru', bolivia:'Bolívia', argentina:'Argentina', brazil:'Brasil', usa:'Estados Unidos', vietnam:'Vietnã',
     machu:'Machu Picchu sob um céu nublado', valley:'Montanhas rochosas acima de uma cidade no Peru', city:'Uma viajante observa uma cidade no Peru', ruins:'Uma cidade e ruínas de pedra ao pé das montanhas', stars:'Um céu estrelado refletido no salar', sunset:'O pôr do sol refletido no salar', falls:'Cachoeiras cercadas por uma floresta verde', coast:'Uma montanha à beira-mar vista de um teleférico', nyc:'Painéis luminosos sobre uma rua chuvosa', street:'Uma vendedora e motocicletas em uma rua no Vietnã'
   }
@@ -36,6 +36,9 @@ Object.assign(translations.pt, {
 Object.assign(translations.en,{travelPhoto:'Travel photograph',loadingPhotos:'Loading photographs…',savedPhotos:'Showing the saved selection.',brazilPortrait:'A traveler overlooking the coast in Brazil',vietnamLane:'A narrow lane with motorbikes in Vietnam',vietnamRailway:'Railway tracks between buildings in Vietnam'});
 Object.assign(translations.es,{travelPhoto:'Fotografía de viaje',loadingPhotos:'Cargando fotografías…',savedPhotos:'Se muestra la selección guardada.',brazilPortrait:'Una viajera contempla la costa de Brasil',vietnamLane:'Un callejón con motocicletas en Vietnam',vietnamRailway:'Vías de tren entre edificios en Vietnam'});
 Object.assign(translations.pt,{travelPhoto:'Fotografia de viagem',loadingPhotos:'Carregando fotografias…',savedPhotos:'Exibindo a seleção salva.',brazilPortrait:'Uma viajante observa o litoral do Brasil',vietnamLane:'Uma viela com motocicletas no Vietnã',vietnamRailway:'Trilhos de trem entre edifícios no Vietnã'});
+Object.assign(translations.en,{korea:'South Korea',comingSoon:'Coming soon',previousRegion:'Previous region',nextRegion:'Next region'});
+Object.assign(translations.es,{korea:'Corea del Sur',comingSoon:'Próximamente',previousRegion:'Región anterior',nextRegion:'Siguiente región'});
+Object.assign(translations.pt,{korea:'Coreia do Sul',comingSoon:'Em breve',previousRegion:'Região anterior',nextRegion:'Próxima região'});
 const usCities = [
   {id:'new-york',name:'newYork',state:'New York',cover:'assets/web/usa-1.jpg',alt:'nyc',position:'50% 35%'},
   {id:'boston',name:'boston',state:'Massachusetts',cover:'assets/web/boston-3.jpg',alt:'bostonHarbor'},
@@ -74,6 +77,8 @@ const photos = [
   {country:'vietnam',src:'assets/web/vietnam-1.jpg',preview:'assets/web/vietnam-1.jpg',alt:'vietnamLane'},
   {country:'vietnam',src:'assets/web/vietnam-2.jpg',preview:'assets/web/vietnam-2.jpg',alt:'vietnamRailway'}
 ];
+// The excluded Brazil portrait is also omitted from the local fallback.
+for(let i=photos.length-1;i>=0;i--)if(photos[i].alt==='brazilPortrait')photos.splice(i,1);
 const syncedLibrary=window.JOURNAL_PHOTO_LIBRARY;
 if(syncedLibrary?.photos?.length){
   photos.splice(0,photos.length,...syncedLibrary.photos);
@@ -93,6 +98,7 @@ if(aboutPhoto)document.querySelector('.about-photo img').src=aboutPhoto.preview;
 
 let language = 'en';
 try { const saved=localStorage.getItem('bylunime-language'); if (Object.hasOwn(translations,saved)) language=saved; } catch {}
+let activeRegion='southAmerica';
 let selectedCountry='all';
 let selectedCity='all';
 let journalCity=null;
@@ -112,6 +118,8 @@ const languageMenu=document.querySelector('#language-menu');
 const languageNames={en:'English',es:'Español',pt:'Português'};
 function closeLanguageMenu(){languageMenu.hidden=true;languageToggle.setAttribute('aria-expanded','false');}
 const t=(key)=>translations[language][key];
+const regionCountries=()=>countries.filter(country=>country.region===activeRegion);
+const regionPhotos=()=>photos.filter(photo=>regionCountries().some(country=>country.id===photo.country));
 function openDialog(dialog) { dialog.showModal(); document.body.classList.add('modal-open'); }
 function closeMenu(){ countryMenu.hidden=true; journeysToggle.setAttribute('aria-expanded','false'); }
 function updateJournal(){
@@ -123,6 +131,7 @@ function updateJournal(){
   renderJournalPhotos();
 }
 function openUSCities(){
+  if(activeRegion!=='northAmerica')selectRegion(1,false);
   document.querySelector('#united-states').hidden=false;
   closeMenu();closeLanguageMenu();
   if(location.hash!=='#united-states')history.pushState(null,'','#united-states');
@@ -183,7 +192,7 @@ function renderCityFilters(){
 }
 function renderJourneys(){
   const grid=document.querySelector('#journey-grid');grid.replaceChildren();countryMenu.replaceChildren();
-  countries.forEach(country=>{
+  regionCountries().forEach(country=>{
     const button=document.createElement('button');button.className='journey';if(country.id!=='usa')button.setAttribute('aria-haspopup','dialog');
     button.innerHTML=`<div class="journey-image"><img src="${country.cover}" alt="${t(country.alt)}" loading="lazy"><span class="journey-label">${t(country.region)}</span></div><div class="journey-caption"><div><h3>${t(country.id)}</h3><p>${t('photoCollection')}</p></div><span class="text-link">${t(country.id==='usa'?'exploreCities':'openJournal')}</span></div>`;
     button.addEventListener('click',()=>openJournal(country.id));grid.append(button);
@@ -192,7 +201,7 @@ function renderJourneys(){
 }
 function renderFilters(){
   const root=document.querySelector('#country-filters');root.replaceChildren();
-  ['all',...countries.map(c=>c.id)].forEach(id=>{
+  ['all',...regionCountries().map(c=>c.id)].forEach(id=>{
     const button=document.createElement('button');button.textContent=t(id);button.dataset.country=id;
     button.setAttribute('aria-pressed',String(selectedCountry===id));
     button.addEventListener('click',()=>{
@@ -203,7 +212,7 @@ function renderFilters(){
   });
 }
 function renderGallery(){
-  visiblePhotos=photos.filter(photo=>(selectedCountry==='all'||photo.country===selectedCountry)&&(selectedCountry!=='usa'||selectedCity==='all'||photo.city===selectedCity));
+  visiblePhotos=regionPhotos().filter(photo=>(selectedCountry==='all'||photo.country===selectedCountry)&&(selectedCountry!=='usa'||selectedCity==='all'||photo.city===selectedCity));
   const grid=document.querySelector('#photo-grid');grid.replaceChildren();
   visiblePhotos.forEach((photo,i)=>{
     const button=document.createElement('button');
@@ -214,7 +223,7 @@ function renderGallery(){
     button.addEventListener('click',()=>{lightboxPhotos=visiblePhotos;showPhoto(i);openDialog(lightbox);});grid.append(button);
   });
   const city=usCities.find(c=>c.id===selectedCity);
-  const galleryLabel=selectedCountry==='all'?t('countriesCount')(countries.length):(selectedCountry==='usa'&&city?`${t('usa')} · ${t(city.name)}`:t(selectedCountry));
+  const galleryLabel=selectedCountry==='all'?t('countriesCount')(regionCountries().length):(selectedCountry==='usa'&&city?`${t('usa')} · ${t(city.name)}`:t(selectedCountry));
   document.querySelector('#gallery-count').textContent=`${galleryLabel} · ${t('count')(visiblePhotos.length)}`;
 }
 function showPhoto(index){
@@ -242,8 +251,48 @@ function applyLanguage(next){
   lightbox.querySelector('[data-close]').setAttribute('aria-label',t('closePhoto'));
   document.querySelector('.hero-photo').alt=t(heroPhoto?.alt||'machu');document.querySelector('.about-photo img').alt=t(aboutPhoto?.alt||'city');
   if(heroPhoto)document.querySelector('[data-i18n="heroLocation"]').textContent=`${t(heroPhoto.country)} · ${t(countries.find(country=>country.id===heroPhoto.country).region)}`;
-  closeMenu();renderJourneys();renderUSCities();renderFilters();renderCityFilters();renderGallery();updateJournal();if(lightbox.open)showPhoto(currentPhoto);
+  closeMenu();renderJourneys();renderUSCities();renderFilters();renderCityFilters();renderGallery();updateJournal();renderRegionDestinations();if(lightbox.open)showPhoto(currentPhoto);
   try {localStorage.setItem('bylunime-language',language);} catch {}
+}
+const regionKeys=['southAmerica','northAmerica','korea'];
+let regionIndex=0;
+function renderRegionDestinations(){
+  const root=document.querySelector('#south-destinations');root.replaceChildren();
+  countries.filter(country=>country.region==='southAmerica').forEach(country=>{
+    const button=document.createElement('button');button.textContent=t(country.id);button.addEventListener('click',()=>openJournal(country.id));root.append(button);
+  });
+  document.querySelector('#region-previous').setAttribute('aria-label',t('previousRegion'));
+  document.querySelector('#region-next').setAttribute('aria-label',t('nextRegion'));
+}
+function applyRegion(index){
+  regionIndex=index;activeRegion=regionKeys[index];selectedCountry='all';selectedCity='all';
+  const hero=document.querySelector('.hero');hero.classList.toggle('is-korea',index===2);
+  document.querySelectorAll('[data-region-index]').forEach(button=>button.setAttribute('aria-pressed',String(Number(button.dataset.regionIndex)===index)));
+  document.querySelectorAll('.region-slide').forEach((slide,i)=>{slide.inert=i!==index;});
+  document.querySelector('#region-previous').disabled=index===0;document.querySelector('#region-next').disabled=index===2;
+  document.querySelector('#region-position').textContent=`0${index+1} / 03`;
+  document.querySelector('#united-states').hidden=index!==1;
+  document.querySelectorAll('main,footer').forEach(el=>el.hidden=index===2);
+  closeMenu();closeLanguageMenu();renderJourneys();renderFilters();renderCityFilters();renderGallery();
+}
+function selectRegion(index,smooth=true){
+  index=Math.max(0,Math.min(2,index));applyRegion(index);
+  const slides=document.querySelector('#region-slides');
+  slides.scrollTo({left:slides.clientWidth*index,behavior:smooth&&!matchMedia('(prefers-reduced-motion: reduce)').matches?'smooth':'instant'});
+}
+function initializeRegions(){
+  const slides=document.querySelector('#region-slides');
+  const north=photos.find(photo=>photo.country==='usa'&&photo.alt==='nyc')||photos.find(photo=>photo.country==='usa');
+  if(north){document.querySelector('.north-hero-photo').src=north.src;document.querySelector('.north-hero-photo').alt=t(north.alt);}
+  document.querySelectorAll('[data-region-index]').forEach(button=>button.addEventListener('click',()=>selectRegion(Number(button.dataset.regionIndex))));
+  document.querySelector('#region-previous').addEventListener('click',()=>selectRegion(regionIndex-1));
+  document.querySelector('#region-next').addEventListener('click',()=>selectRegion(regionIndex+1));
+  document.querySelector('#north-destination').addEventListener('click',openUSCities);
+  let settle;
+  slides.addEventListener('scroll',()=>{clearTimeout(settle);settle=setTimeout(()=>{const index=Math.round(slides.scrollLeft/slides.clientWidth);if(index!==regionIndex)applyRegion(index);},140);},{passive:true});
+  document.querySelector('.hero').addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight'].includes(event.key)||document.querySelector('dialog[open]'))return;event.preventDefault();selectRegion(regionIndex+(event.key==='ArrowRight'?1:-1));});
+  window.addEventListener('resize',()=>slides.scrollTo({left:slides.clientWidth*regionIndex,behavior:'instant'}));
+  applyRegion(0);
 }
 journeysToggle.addEventListener('click',()=>{countryMenu.hidden=!countryMenu.hidden;journeysToggle.setAttribute('aria-expanded',String(!countryMenu.hidden));});
 document.addEventListener('click',event=>{if(!event.target.closest('.journeys-menu'))closeMenu();if(!event.target.closest('.language-switch'))closeLanguageMenu();});
@@ -264,6 +313,8 @@ document.addEventListener('keydown',event=>{
   if(event.key==='ArrowRight'){event.preventDefault();showPhoto(currentPhoto+1);}
 });
 document.querySelector('#journal-gallery').addEventListener('click',()=>{
+  const region=countries.find(country=>country.id===journalCountry)?.region;
+  if(region&&region!==activeRegion)selectRegion(region==='northAmerica'?1:0,false);
   selectedCountry=journalCountry;selectedCity=journalCity||'all';journal.close();renderFilters();renderCityFilters();renderGallery();
   document.querySelector('#photo-grid button')?.focus({preventScroll:true});
   document.querySelector('#gallery').scrollIntoView({behavior:'instant',block:'start'});
@@ -274,5 +325,6 @@ document.querySelector('#all-us-photos').addEventListener('click',()=>{
   location.hash='gallery';document.querySelector('#photo-grid button')?.focus({preventScroll:true});
 });
 window.addEventListener('hashchange',()=>{if(location.hash==='#united-states')document.querySelector('#united-states').hidden=false;});
+initializeRegions();
 applyLanguage(language);
 if(location.hash==='#united-states')openUSCities();

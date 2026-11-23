@@ -12,8 +12,25 @@
 <body>
   <a class="skip" href="#about" data-i18n="skip">Skip to content</a>
   <header class="hero" id="home">
-    <img class="hero-photo" src="assets/web/hero.jpg" alt="Mountain peaks and the stone terraces of Machu Picchu in Peru" fetchpriority="high">
-    <div class="hero-shade"></div>
+    <div class="region-slides" id="region-slides" role="region" aria-label="Travel regions" tabindex="0">
+      <section class="region-slide" data-region="southAmerica" aria-labelledby="south-america-title">
+        <img class="hero-photo" src="assets/web/hero.jpg" alt="Machu Picchu beneath a cloudy sky" fetchpriority="high">
+        <div class="hero-shade"></div>
+        <div class="region-title"><p class="eyebrow" data-i18n="photographs">Photographs &amp; notes</p><h1 id="south-america-title" data-i18n="southAmerica">South America</h1><div class="region-destinations" id="south-destinations"></div></div>
+        <div class="region-bottom"><span data-i18n="heroLocation">Peru · South America</span><a href="#journal" data-i18n="exploreJourneys">Explore the journeys</a></div>
+      </section>
+      <section class="region-slide" data-region="northAmerica" aria-labelledby="north-america-title" inert>
+        <img class="north-hero-photo" src="assets/web/usa-1.jpg" alt="Bright billboards above a rainy city street" loading="lazy">
+        <div class="hero-shade"></div>
+        <div class="region-title"><p class="eyebrow" data-i18n="photographs">Photographs &amp; notes</p><h1 id="north-america-title" data-i18n="northAmerica">North America</h1><div class="region-destinations"><button id="north-destination" data-i18n="usa">United States</button></div></div>
+        <div class="region-bottom"><span data-i18n="usa">United States</span><a href="#journal" data-i18n="exploreJourneys">Explore the journeys</a></div>
+      </section>
+      <section class="region-slide region-coming" data-region="korea" aria-labelledby="korea-title" inert>
+        <div class="region-title"><p class="eyebrow">bylunime</p><h1 id="korea-title" data-i18n="korea">South Korea</h1><p class="coming-label" data-i18n="comingSoon">Coming soon</p></div>
+      </section>
+    </div>
+    <a class="region-wordmark" href="#home">bylunime</a>
+    <div class="region-tabs" role="group" aria-label="Travel regions"><button data-region-index="0" aria-pressed="true" data-i18n="southAmerica">South America</button><button data-region-index="1" aria-pressed="false" data-i18n="northAmerica">North America</button><button data-region-index="2" aria-pressed="false" data-i18n="korea">South Korea</button></div>
     <div class="language-switch" role="group" aria-label="Language">
       <button id="language-toggle" aria-expanded="false" aria-controls="language-menu" aria-label="Language: English">
         <span id="current-language">EN</span>
@@ -25,14 +42,9 @@
         <button data-lang="pt" lang="pt-BR" aria-pressed="false"><span>Português</span><span class="language-code" aria-hidden="true">PT</span></button>
       </div>
     </div>
-    <div class="hero-title">
-      <p class="eyebrow" data-i18n="photographs">Photographs &amp; notes</p>
-      <h1>bylunime</h1>
-      <nav aria-label="Main navigation">
-        <a href="#about" data-i18n="about">About</a><div class="journeys-menu"><button id="journeys-toggle" aria-expanded="false" aria-controls="country-menu" data-i18n="journeys">Journeys</button><div id="country-menu" hidden></div></div><a href="#gallery" data-i18n="gallery">Gallery</a>
-      </nav>
-    </div>
-    <div class="hero-bottom"><span data-i18n="heroLocation">Peru · South America</span><a href="#gallery" data-i18n="explorePhotos">Explore the photographs</a></div>
+    <div class="hero-title"><nav aria-label="Main navigation"><a href="#about" data-i18n="about">About</a><div class="journeys-menu"><button id="journeys-toggle" aria-expanded="false" aria-controls="country-menu" data-i18n="journeys">Journeys</button><div id="country-menu" hidden></div></div><a href="#gallery" data-i18n="gallery">Gallery</a></nav></div>
+    <div class="region-controls"><button id="region-previous" aria-label="Previous region" disabled><span aria-hidden="true">‹</span></button><span id="region-position" aria-live="polite">01 / 03</span><button id="region-next" aria-label="Next region"><span aria-hidden="true">›</span></button></div>
+
   </header>
   <main>
     <section class="about section" id="about" aria-labelledby="about-title">

@@ -205,9 +205,12 @@ def publishable_site(client, root_id, output, source_root=ROOT):
             shutil.copyfile(source_root / name, staging / name)
         hero = next((p for p in photos if p["alt"] == "machu"), photos[0])
         about = next((p for p in photos if p["country"] == "peru" and p["alt"] == "city"), photos[0])
+        north = next((p for p in photos if p["country"] == "usa" and p["alt"] == "nyc"),
+                     next((p for p in photos if p["country"] == "usa"), hero))
         html = (staging / "index.html").read_text()
         html = html.replace('src="assets/web/hero.jpg"', f'src="{hero["src"]}"')
         html = html.replace('src="assets/web/photo-5.jpg"', f'src="{about["preview"]}"')
+        html = html.replace('src="assets/web/usa-1.jpg"', f'src="{north["src"]}"')
         (staging / "index.html").write_text(html)
         manifest = json.dumps({"photos": photos}, ensure_ascii=True, separators=(",", ":"))
         (staging / "photo-manifest.js").write_text(f"window.JOURNAL_PHOTO_LIBRARY = {manifest};\n")
