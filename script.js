@@ -92,9 +92,7 @@ if(syncedLibrary?.photos?.length){
   }
 }
 const heroPhoto=syncedLibrary?.photos?.length?(photos.find(photo=>photo.alt==='machu')||photos[0]):null;
-const aboutPhoto=syncedLibrary?.photos?.length?(photos.find(photo=>photo.country==='peru'&&photo.alt==='city')||photos[0]):null;
 if(heroPhoto)document.querySelector('.hero-photo').src=heroPhoto.src;
-if(aboutPhoto)document.querySelector('.about-photo img').src=aboutPhoto.preview;
 
 let language = 'en';
 try { const saved=localStorage.getItem('bylunime-language'); if (Object.hasOwn(translations,saved)) language=saved; } catch {}
@@ -249,7 +247,7 @@ function applyLanguage(next){
   document.querySelector('#city-filters').setAttribute('aria-label',t('cityFilter'));
   journal.querySelector('[data-close]').setAttribute('aria-label',t('closeJournal'));
   lightbox.querySelector('[data-close]').setAttribute('aria-label',t('closePhoto'));
-  document.querySelector('.hero-photo').alt=t(heroPhoto?.alt||'machu');document.querySelector('.about-photo img').alt=t(aboutPhoto?.alt||'city');
+  document.querySelector('.hero-photo').alt=t(heroPhoto?.alt||'machu');
   if(heroPhoto)document.querySelector('[data-i18n="heroLocation"]').textContent=`${t(heroPhoto.country)} · ${t(countries.find(country=>country.id===heroPhoto.country).region)}`;
   closeMenu();renderJourneys();renderUSCities();renderFilters();renderCityFilters();renderGallery();updateJournal();renderRegionDestinations();if(lightbox.open)showPhoto(currentPhoto);
   try {localStorage.setItem('bylunime-language',language);} catch {}
