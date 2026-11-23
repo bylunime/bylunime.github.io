@@ -6,6 +6,7 @@
   <meta name="description" content="A personal collection of travel photographs and notes.">
   <title>bylunime — Photographs &amp; Notes</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="photo-manifest.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -50,7 +51,7 @@
     </section>
     <section class="us-journeys section" id="united-states" aria-labelledby="us-title" hidden>
       <nav class="destination-breadcrumb" aria-label="Breadcrumb"><a href="#journal" data-i18n="journeys">Journeys</a><span aria-hidden="true">/</span><span data-i18n="usa">United States</span></nav>
-      <div class="section-heading"><div><p class="eyebrow" data-i18n="northAmerica">North America</p><h2 id="us-title" tabindex="-1" data-i18n="usa">United States</h2></div><p data-i18n="citiesIntro">Five cities, five photo collections.</p></div>
+      <div class="section-heading"><div><p class="eyebrow" data-i18n="northAmerica">North America</p><h2 id="us-title" tabindex="-1" data-i18n="usa">United States</h2></div><p data-i18n="citiesIntro">Photo collections by city.</p></div>
       <div class="us-city-grid" id="us-city-grid"></div>
       <button class="text-link" id="all-us-photos" data-i18n="allUSPhotos">View all United States photographs</button>
     </section>
@@ -65,8 +66,14 @@
   <footer><a class="wordmark" href="#home">bylunime</a><p data-i18n="photographs">Photographs &amp; notes</p><a href="#home" data-i18n="backTop">Back to top</a></footer>
   <dialog id="journal-dialog" class="journal-dialog" aria-labelledby="journal-dialog-title">
     <button class="close" aria-label="Close journal" data-close><span data-i18n="close">Close</span> <span aria-hidden="true">×</span></button>
-    <img class="journal-cover" src="assets/web/photo-3.jpg" alt="Mountain valley in Peru">
-    <article class="journal-body"><button class="text-link journal-back" id="journal-back" data-i18n="backCities" hidden>Back to United States cities</button><p class="eyebrow" id="journal-region">South America</p><h2 id="journal-dialog-title">Peru</h2><p class="muted" data-i18n="notesSoon">Travel notes coming soon.</p><p data-i18n="notesPlaceholder">This collection begins with photographs. Written notes will be added here.</p><button class="text-link" id="journal-gallery" data-i18n="viewPhotos">View the photographs</button></article>
+    <article class="journal-body">
+      <button class="text-link journal-back" id="journal-back" data-i18n="backCities" hidden>Back to United States cities</button>
+      <p class="eyebrow" id="journal-region">South America</p><h2 id="journal-dialog-title">Peru</h2>
+      <p class="journal-photo-count" id="journal-photo-count"></p>
+      <p class="muted journal-status" id="journal-photo-status" role="status" hidden></p>
+      <div class="journal-photo-grid" id="journal-photo-grid"></div>
+      <div class="journal-notes"><p class="muted" data-i18n="notesSoon">Travel notes coming soon.</p><p data-i18n="notesPlaceholder">This collection begins with photographs. Written notes will be added here.</p><button class="text-link" id="journal-gallery" data-i18n="viewPhotos">View the photographs</button></div>
+    </article>
   </dialog>
   <dialog id="lightbox" class="lightbox" aria-labelledby="photo-caption">
     <div class="lightbox-top"><span id="photo-count"></span><button class="close" aria-label="Close photograph" data-close><span data-i18n="close">Close</span> <span aria-hidden="true">×</span></button></div>

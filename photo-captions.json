@@ -1,0 +1,117 @@
+[
+  {
+    "country": "peru",
+    "name": "photo-4.jpg",
+    "alt": "machu"
+  },
+  {
+    "country": "bolivia",
+    "name": "uyuni-1.jpg",
+    "alt": "stars",
+    "position": "50% 55%"
+  },
+  {
+    "country": "argentina",
+    "name": "argentina-1.jpg",
+    "alt": "falls"
+  },
+  {
+    "country": "brazil",
+    "name": "brazil-3.jpg",
+    "alt": "coast"
+  },
+  {
+    "country": "bolivia",
+    "name": "uyuni-2.jpg",
+    "alt": "sunset"
+  },
+  {
+    "country": "usa",
+    "name": "usa-1.jpg",
+    "alt": "nyc",
+    "city": "new-york",
+    "position": "50% 35%"
+  },
+  {
+    "country": "vietnam",
+    "name": "vietnam-3.jpg",
+    "alt": "street"
+  },
+  {
+    "country": "peru",
+    "name": "photo-2.jpg",
+    "alt": "valley"
+  },
+  {
+    "country": "peru",
+    "name": "photo-5.jpg",
+    "alt": "city"
+  },
+  {
+    "country": "peru",
+    "name": "photo-3.jpg",
+    "alt": "ruins"
+  },
+  {
+    "country": "usa",
+    "name": "boston-3.jpg",
+    "alt": "bostonHarbor",
+    "city": "boston"
+  },
+  {
+    "country": "usa",
+    "name": "boston-extra-1.jpg",
+    "alt": "bostonArt",
+    "city": "boston"
+  },
+  {
+    "country": "usa",
+    "name": "chicago-extra-3.jpg",
+    "alt": "chicagoFountain",
+    "city": "chicago"
+  },
+  {
+    "country": "usa",
+    "name": "cincinnati-2.jpg",
+    "alt": "cincinnatiShop",
+    "city": "cincinnati"
+  },
+  {
+    "country": "usa",
+    "name": "cincinnati-3.jpg",
+    "alt": "cincinnatiRain",
+    "city": "cincinnati"
+  },
+  {
+    "country": "usa",
+    "name": "washington-dc-1.jpg",
+    "alt": "dcWaterfront",
+    "city": "washington-dc"
+  },
+  {
+    "country": "usa",
+    "name": "washington-dc-2.jpg",
+    "alt": "dcMonument",
+    "city": "washington-dc"
+  },
+  {
+    "country": "argentina",
+    "name": "argentina-3.jpg",
+    "alt": "falls"
+  },
+  {
+    "country": "brazil",
+    "name": "brazil-1.jpg",
+    "alt": "brazilPortrait"
+  },
+  {
+    "country": "vietnam",
+    "name": "vietnam-1.jpg",
+    "alt": "vietnamLane"
+  },
+  {
+    "country": "vietnam",
+    "name": "vietnam-2.jpg",
+    "alt": "vietnamRailway"
+  }
+]

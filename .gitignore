@@ -1,3 +1,17 @@
 .DS_Store
 assets/photo-*.jpg
 .local/
+
+drive-config.js
+
+drive-photos.js
+
+_site/
+
+__pycache__/
+
+*.pyc
+
+service-account*.json
+
+credentials*.json

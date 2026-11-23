@@ -19,20 +19,23 @@ const translations = {
   }
 };
 Object.assign(translations.en, {
-  cities:'Cities', allCities:'All cities', citiesIntro:'Five cities, five photo collections.', exploreCities:'Explore 5 cities', backCities:'Back to United States cities', allUSPhotos:'View all United States photographs', cityFilter:'Filter photographs by city',
+  cities:'Cities', allCities:'All cities', citiesIntro:'Photo collections by city.', exploreCities:'Explore the cities', backCities:'Back to United States cities', allUSPhotos:'View all United States photographs', cityFilter:'Filter photographs by city',
   newYork:'New York', boston:'Boston', chicago:'Chicago', cincinnati:'Cincinnati', washingtonDC:'Washington, D.C.',
   bostonHarbor:'A traveler beside the waterfront in Boston', bostonArt:'A sculpture in front of a large gallery window', chicagoFountain:'A fountain and city buildings in Chicago', cincinnatiShop:'A carousel horse inside a candy shop', cincinnatiRain:'Umbrellas on a rainy street in Cincinnati', dcWaterfront:'A traveler beside the water in Washington, D.C.', dcMonument:'A traveler in front of the Washington Monument'
 });
 Object.assign(translations.es, {
-  cities:'Ciudades', allCities:'Todas las ciudades', citiesIntro:'Cinco ciudades, cinco colecciones de fotografías.', exploreCities:'Explorar 5 ciudades', backCities:'Volver a las ciudades de Estados Unidos', allUSPhotos:'Ver todas las fotografías de Estados Unidos', cityFilter:'Filtrar fotografías por ciudad',
+  cities:'Ciudades', allCities:'Todas las ciudades', citiesIntro:'Colecciones de fotografías por ciudad.', exploreCities:'Explorar las ciudades', backCities:'Volver a las ciudades de Estados Unidos', allUSPhotos:'Ver todas las fotografías de Estados Unidos', cityFilter:'Filtrar fotografías por ciudad',
   newYork:'Nueva York', boston:'Boston', chicago:'Chicago', cincinnati:'Cincinnati', washingtonDC:'Washington D. C.',
   bostonHarbor:'Una viajera junto al puerto de Boston', bostonArt:'Una escultura frente a una gran ventana de una galería', chicagoFountain:'Una fuente y edificios de Chicago', cincinnatiShop:'Un caballo de carrusel en una tienda de dulces', cincinnatiRain:'Paraguas en una calle lluviosa de Cincinnati', dcWaterfront:'Una viajera junto al agua en Washington D. C.', dcMonument:'Una viajera frente al Monumento a Washington'
 });
 Object.assign(translations.pt, {
-  cities:'Cidades', allCities:'Todas as cidades', citiesIntro:'Cinco cidades, cinco coleções de fotografias.', exploreCities:'Explorar 5 cidades', backCities:'Voltar às cidades dos Estados Unidos', allUSPhotos:'Ver todas as fotografias dos Estados Unidos', cityFilter:'Filtrar fotografias por cidade',
+  cities:'Cidades', allCities:'Todas as cidades', citiesIntro:'Coleções de fotografias por cidade.', exploreCities:'Explorar as cidades', backCities:'Voltar às cidades dos Estados Unidos', allUSPhotos:'Ver todas as fotografias dos Estados Unidos', cityFilter:'Filtrar fotografias por cidade',
   newYork:'Nova York', boston:'Boston', chicago:'Chicago', cincinnati:'Cincinnati', washingtonDC:'Washington, D.C.',
   bostonHarbor:'Uma viajante à beira do porto de Boston', bostonArt:'Uma escultura diante de uma grande janela de uma galeria', chicagoFountain:'Uma fonte e edifícios de Chicago', cincinnatiShop:'Um cavalo de carrossel em uma loja de doces', cincinnatiRain:'Guarda-chuvas em uma rua chuvosa de Cincinnati', dcWaterfront:'Uma viajante à beira da água em Washington, D.C.', dcMonument:'Uma viajante em frente ao Monumento a Washington'
 });
+Object.assign(translations.en,{travelPhoto:'Travel photograph',loadingPhotos:'Loading photographs…',savedPhotos:'Showing the saved selection.',brazilPortrait:'A traveler overlooking the coast in Brazil',vietnamLane:'A narrow lane with motorbikes in Vietnam',vietnamRailway:'Railway tracks between buildings in Vietnam'});
+Object.assign(translations.es,{travelPhoto:'Fotografía de viaje',loadingPhotos:'Cargando fotografías…',savedPhotos:'Se muestra la selección guardada.',brazilPortrait:'Una viajera contempla la costa de Brasil',vietnamLane:'Un callejón con motocicletas en Vietnam',vietnamRailway:'Vías de tren entre edificios en Vietnam'});
+Object.assign(translations.pt,{travelPhoto:'Fotografia de viagem',loadingPhotos:'Carregando fotografias…',savedPhotos:'Exibindo a seleção salva.',brazilPortrait:'Uma viajante observa o litoral do Brasil',vietnamLane:'Uma viela com motocicletas no Vietnã',vietnamRailway:'Trilhos de trem entre edifícios no Vietnã'});
 const usCities = [
   {id:'new-york',name:'newYork',state:'New York',cover:'assets/web/usa-1.jpg',alt:'nyc',position:'50% 35%'},
   {id:'boston',name:'boston',state:'Massachusetts',cover:'assets/web/boston-3.jpg',alt:'bostonHarbor'},
@@ -65,8 +68,29 @@ const photos = [
   {country:'usa',city:'cincinnati',src:'assets/web/cincinnati-2.jpg',preview:'assets/web/cincinnati-2.jpg',alt:'cincinnatiShop'},
   {country:'usa',city:'cincinnati',src:'assets/web/cincinnati-3.jpg',preview:'assets/web/cincinnati-3.jpg',alt:'cincinnatiRain'},
   {country:'usa',city:'washington-dc',src:'assets/web/washington-dc-1.jpg',preview:'assets/web/washington-dc-1.jpg',alt:'dcWaterfront'},
-  {country:'usa',city:'washington-dc',src:'assets/web/washington-dc-2.jpg',preview:'assets/web/washington-dc-2.jpg',alt:'dcMonument'}
+  {country:'usa',city:'washington-dc',src:'assets/web/washington-dc-2.jpg',preview:'assets/web/washington-dc-2.jpg',alt:'dcMonument'},
+  {country:'argentina',src:'assets/web/argentina-3.jpg',preview:'assets/web/argentina-3.jpg',alt:'falls'},
+  {country:'brazil',src:'assets/web/brazil-1.jpg',preview:'assets/web/brazil-1.jpg',alt:'brazilPortrait'},
+  {country:'vietnam',src:'assets/web/vietnam-1.jpg',preview:'assets/web/vietnam-1.jpg',alt:'vietnamLane'},
+  {country:'vietnam',src:'assets/web/vietnam-2.jpg',preview:'assets/web/vietnam-2.jpg',alt:'vietnamRailway'}
 ];
+const syncedLibrary=window.JOURNAL_PHOTO_LIBRARY;
+if(syncedLibrary?.photos?.length){
+  photos.splice(0,photos.length,...syncedLibrary.photos);
+  for(const collection of [countries,usCities]){
+    for(let index=collection.length-1;index>=0;index--){
+      const item=collection[index];
+      const match=photos.find(photo=>collection===countries?photo.country===item.id:photo.city===item.id);
+      if(match)Object.assign(item,{cover:match.preview,alt:match.alt,position:match.position});
+      else collection.splice(index,1);
+    }
+  }
+}
+const heroPhoto=syncedLibrary?.photos?.length?(photos.find(photo=>photo.alt==='machu')||photos[0]):null;
+const aboutPhoto=syncedLibrary?.photos?.length?(photos.find(photo=>photo.country==='peru'&&photo.alt==='city')||photos[0]):null;
+if(heroPhoto)document.querySelector('.hero-photo').src=heroPhoto.src;
+if(aboutPhoto)document.querySelector('.about-photo img').src=aboutPhoto.preview;
+
 let language = 'en';
 try { const saved=localStorage.getItem('bylunime-language'); if (Object.hasOwn(translations,saved)) language=saved; } catch {}
 let selectedCountry='all';
@@ -75,6 +99,9 @@ let journalCity=null;
 let journalCountry='peru';
 let currentPhoto=0;
 let visiblePhotos=photos;
+let lightboxPhotos=photos;
+let journalPhotos=[];
+const previousOrders=new Map();
 const journal=document.querySelector('#journal-dialog');
 const lightbox=document.querySelector('#lightbox');
 const largePhoto=document.querySelector('#large-photo');
@@ -93,7 +120,7 @@ function updateJournal(){
   document.querySelector('#journal-dialog-title').textContent=city?t(city.name):t(country.id);
   document.querySelector('#journal-region').textContent=city?`${city.state} · ${t('usa')}`:t(country.region);
   document.querySelector('#journal-back').hidden=!city;
-  const image=journal.querySelector('.journal-cover'); image.src=city?city.cover:country.cover; image.alt=t(city?city.alt:country.alt);
+  renderJournalPhotos();
 }
 function openUSCities(){
   document.querySelector('#united-states').hidden=false;
@@ -102,11 +129,38 @@ function openUSCities(){
   document.querySelector('#us-title').focus({preventScroll:true});
   document.querySelector('#united-states').scrollIntoView({behavior:'instant',block:'start'});
 }
-function openJournal(country){
-  if(country==='usa'){openUSCities();return;}
-  journalCountry=country;journalCity=null;updateJournal();closeMenu();openDialog(journal);
+function randomSelection(items,key){
+  const shuffled=[...items];
+  for(let i=shuffled.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[shuffled[i],shuffled[j]]=[shuffled[j],shuffled[i]];}
+  const identity=p=>p.id||p.src;
+  if(shuffled.length>1&&identity(shuffled[0])===previousOrders.get(key))shuffled.push(shuffled.shift());
+  if(shuffled.length)previousOrders.set(key,identity(shuffled[0]));
+  return shuffled.slice(0,8);
 }
-function openCity(city){journalCountry='usa';journalCity=city;updateJournal();openDialog(journal);}
+function collectionPhotos(country,city){return photos.filter(photo=>photo.country===country&&(!city||photo.city===city));}
+function setImageFallback(image,photo){
+  image.addEventListener('error',()=>{if(photo.fallback&&image.getAttribute('src')!==photo.fallback)image.src=photo.fallback;},{once:true});
+}
+function renderJournalPhotos(){
+  const grid=document.querySelector('#journal-photo-grid');grid.replaceChildren();
+  document.querySelector('#journal-photo-count').textContent=t('count')(journalPhotos.length);
+  journalPhotos.forEach((photo,index)=>{
+    const button=document.createElement('button');button.className='collection-photo';button.setAttribute('aria-label',`${t('enlarge')}: ${t(photo.alt)}`);
+    const image=document.createElement('img');image.src=photo.preview;image.alt=t(photo.alt);image.loading=index<2?'eager':'lazy';
+    if(photo.position)image.style.objectPosition=photo.position;setImageFallback(image,photo);button.append(image);
+    const label=document.createElement('span');label.textContent=t('viewPhoto');button.append(label);
+    button.addEventListener('click',()=>{lightboxPhotos=journalPhotos;showPhoto(index);openDialog(lightbox);});grid.append(button);
+  });
+}
+function openCollection(country,city=null){
+  journalCountry=country;journalCity=city;
+  const key=`${country}/${city||''}`;
+  journalPhotos=randomSelection(collectionPhotos(country,city),key);
+  document.querySelector('#journal-photo-status').hidden=true;
+  updateJournal();closeMenu();openDialog(journal);journal.scrollTop=0;
+}
+function openJournal(country){if(country==='usa'){openUSCities();return;}openCollection(country);}
+function openCity(city){openCollection('usa',city);}
 function renderUSCities(){
   const grid=document.querySelector('#us-city-grid');grid.replaceChildren();
   usCities.forEach(city=>{
@@ -156,17 +210,18 @@ function renderGallery(){
     button.className=`photo ${photo.panorama?'panorama':((selectedCountry==='all'&&i%6===0)||visiblePhotos.length===1?'wide':'')}`;
     button.setAttribute('aria-label',`${t('enlarge')}: ${t(photo.alt)}`);
     button.innerHTML=`<img src="${photo.preview}" alt="${t(photo.alt)}" loading="lazy"${photo.position?` style="object-position:${photo.position}"`:''}><span>${t('viewPhoto')}</span>`;
-    button.addEventListener('click',()=>{showPhoto(i);openDialog(lightbox);});grid.append(button);
+    setImageFallback(button.querySelector('img'),photo);
+    button.addEventListener('click',()=>{lightboxPhotos=visiblePhotos;showPhoto(i);openDialog(lightbox);});grid.append(button);
   });
   const city=usCities.find(c=>c.id===selectedCity);
   const galleryLabel=selectedCountry==='all'?t('countriesCount')(countries.length):(selectedCountry==='usa'&&city?`${t('usa')} · ${t(city.name)}`:t(selectedCountry));
   document.querySelector('#gallery-count').textContent=`${galleryLabel} · ${t('count')(visiblePhotos.length)}`;
 }
 function showPhoto(index){
-  currentPhoto=(index+visiblePhotos.length)%visiblePhotos.length;const photo=visiblePhotos[currentPhoto];
-  largePhoto.onerror=()=>{largePhoto.onerror=null;largePhoto.src=photo.preview;};largePhoto.src=photo.src;largePhoto.alt=t(photo.alt);
+  currentPhoto=(index+lightboxPhotos.length)%lightboxPhotos.length;const photo=lightboxPhotos[currentPhoto];
+  largePhoto.onerror=()=>{largePhoto.onerror=null;largePhoto.src=photo.fallback||photo.preview;};largePhoto.src=photo.src;largePhoto.alt=t(photo.alt);
   document.querySelector('#photo-caption').textContent=t(photo.alt);
-  document.querySelector('#photo-count').textContent=`${currentPhoto+1} / ${visiblePhotos.length}`;
+  document.querySelector('#photo-count').textContent=`${currentPhoto+1} / ${lightboxPhotos.length}`;
   const city=usCities.find(c=>c.id===photo.city);
   document.querySelector('#lightbox-country').textContent=city?`${t(city.name)} · ${t('usa')}`:t(photo.country);
 }
@@ -185,7 +240,8 @@ function applyLanguage(next){
   document.querySelector('#city-filters').setAttribute('aria-label',t('cityFilter'));
   journal.querySelector('[data-close]').setAttribute('aria-label',t('closeJournal'));
   lightbox.querySelector('[data-close]').setAttribute('aria-label',t('closePhoto'));
-  document.querySelector('.hero-photo').alt=t('machu');document.querySelector('.about-photo img').alt=t('city');
+  document.querySelector('.hero-photo').alt=t(heroPhoto?.alt||'machu');document.querySelector('.about-photo img').alt=t(aboutPhoto?.alt||'city');
+  if(heroPhoto)document.querySelector('[data-i18n="heroLocation"]').textContent=`${t(heroPhoto.country)} · ${t(countries.find(country=>country.id===heroPhoto.country).region)}`;
   closeMenu();renderJourneys();renderUSCities();renderFilters();renderCityFilters();renderGallery();updateJournal();if(lightbox.open)showPhoto(currentPhoto);
   try {localStorage.setItem('bylunime-language',language);} catch {}
 }
@@ -197,7 +253,7 @@ document.querySelector('#previous-photo').addEventListener('click',()=>showPhoto
 document.querySelector('#next-photo').addEventListener('click',()=>showPhoto(currentPhoto+1));
 document.querySelectorAll('dialog').forEach(dialog=>{
   dialog.querySelector('[data-close]').addEventListener('click',()=>dialog.close());
-  dialog.addEventListener('close',()=>document.body.classList.remove('modal-open'));
+  dialog.addEventListener('close',()=>{document.body.classList.toggle('modal-open',Boolean(document.querySelector('dialog[open]')));});
   dialog.addEventListener('click',event=>{if(event.target===dialog&&dialog!==lightbox)dialog.close();});
 });
 document.addEventListener('keydown',event=>{
@@ -209,13 +265,13 @@ document.addEventListener('keydown',event=>{
 });
 document.querySelector('#journal-gallery').addEventListener('click',()=>{
   selectedCountry=journalCountry;selectedCity=journalCity||'all';journal.close();renderFilters();renderCityFilters();renderGallery();
-  document.querySelector('#photo-grid button').focus({preventScroll:true});
+  document.querySelector('#photo-grid button')?.focus({preventScroll:true});
   document.querySelector('#gallery').scrollIntoView({behavior:'instant',block:'start'});
 });
 document.querySelector('#journal-back').addEventListener('click',()=>{journal.close();openUSCities();});
 document.querySelector('#all-us-photos').addEventListener('click',()=>{
   selectedCountry='usa';selectedCity='all';renderFilters();renderCityFilters();renderGallery();
-  location.hash='gallery';document.querySelector('#photo-grid button').focus({preventScroll:true});
+  location.hash='gallery';document.querySelector('#photo-grid button')?.focus({preventScroll:true});
 });
 window.addEventListener('hashchange',()=>{if(location.hash==='#united-states')document.querySelector('#united-states').hidden=false;});
 applyLanguage(language);
